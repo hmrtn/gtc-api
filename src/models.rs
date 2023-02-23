@@ -1,3 +1,4 @@
+#![allow(non_snake_case)]
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 
@@ -18,7 +19,6 @@ pub struct ProgramsQuery {
     pub programs: Vec<Program>,
 }
 
-
 // PROJECTS
 #[derive(Clone, Insertable, Queryable, Serialize, Deserialize, Debug)]
 #[diesel(table_name = project)]
@@ -33,7 +33,6 @@ pub struct Project {
 pub struct ProjectsQuery {
     pub roundProjects: Vec<Project>,
 }
-
 
 // ROUNDS
 #[derive(Clone, Insertable, Queryable, Serialize, Deserialize, Debug)]
