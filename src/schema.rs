@@ -13,7 +13,7 @@ diesel::table! {
     projects (id) {
         id -> Text,
         status -> Text,
-        payoutAddress -> Text,
+        payoutAddress -> Nullable<Text>,
         project -> Text,
         createdAt -> Text,
         updatedAt -> Text,

@@ -28,7 +28,7 @@ CREATE TABLE projects
 (
     "id"        TEXT NOT NULL,
     "status"    TEXT NOT NULL,
-    "payoutAddress" TEXT NOT NULL,
+    "payoutAddress"  TEXT,
     "project" TEXT NOT NULL, 
     "createdAt" TEXT NOT NULL,
     "updatedAt" TEXT NOT NULL,

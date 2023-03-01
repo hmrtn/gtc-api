@@ -25,7 +25,7 @@ pub struct ProgramsQuery {
 pub struct Project {
     pub id: String,
     pub status: String, 
-    pub payoutAddress: String,
+    pub payoutAddress: Option<String>,
     pub project: String, 
     pub createdAt: String,
     pub updatedAt: String,
