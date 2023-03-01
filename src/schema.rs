@@ -1,7 +1,7 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
-    program (id) {
+    programs (id) {
         id -> Text,
         createdAt -> Text,
         updatedAt -> Text,
@@ -10,8 +10,11 @@ diesel::table! {
 }
 
 diesel::table! {
-    project (id) {
+    projects (id) {
         id -> Text,
+        status -> Text,
+        payoutAddress -> Text,
+        project -> Text,
         createdAt -> Text,
         updatedAt -> Text,
         chainId -> Nullable<Text>,
@@ -19,8 +22,14 @@ diesel::table! {
 }
 
 diesel::table! {
-    round (id) {
+    rounds (id) {
         id -> Text,
+        payoutStrategy -> Text,
+        token -> Text,
+        roundStartTime -> Text,
+        roundEndTime -> Text,
+        applicationsStartTime -> Text,
+        applicationsEndTime -> Text,
         createdAt -> Text,
         updatedAt -> Text,
         chainId -> Nullable<Text>,
@@ -28,7 +37,7 @@ diesel::table! {
 }
 
 diesel::table! {
-    vote (id) {
+    votes (id) {
         id -> Text,
         createdAt -> Text,
         amount -> Text,
@@ -41,4 +50,9 @@ diesel::table! {
     }
 }
 
-diesel::allow_tables_to_appear_in_same_query!(program, project, round, vote,);
+diesel::allow_tables_to_appear_in_same_query!(
+    programs,
+    projects,
+    rounds,
+    votes,
+);

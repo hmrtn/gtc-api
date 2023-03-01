@@ -123,6 +123,12 @@ pub async fn r_query_rounds(gql: &Client, last_id: &str) -> Vec<Round> {
         query GetRoundsQuery {{
             rounds(first: 1000, where: {{ id_gt: \"{}\" }}) {{
                 id
+                payoutStrategy
+                token
+                roundStartTime
+                roundEndTime
+                applicationsStartTime
+                applicationsEndTime
                 createdAt
                 updatedAt
             }}
@@ -153,6 +159,9 @@ pub async fn r_query_projects(gql: &Client, last_id: &str) -> Vec<Project> {
         query GetProjectQuery {{
             roundProjects(first: 1000, where: {{ id_gt: \"{}\" }}) {{
                 id
+                status
+                payoutAddress
+                project
                 createdAt
                 updatedAt
             }}

@@ -2,11 +2,11 @@
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 
-use crate::schema::{program, project, round, vote};
+use crate::schema::{programs, projects, rounds, votes};
 
 // PROGRAMS
 #[derive(Clone, Insertable, Queryable, Serialize, Deserialize, Debug)]
-#[diesel(table_name = program)]
+#[diesel(table_name = programs)]
 pub struct Program {
     pub id: String,
     pub createdAt: String,
@@ -21,9 +21,12 @@ pub struct ProgramsQuery {
 
 // PROJECTS
 #[derive(Clone, Insertable, Queryable, Serialize, Deserialize, Debug)]
-#[diesel(table_name = project)]
+#[diesel(table_name = projects)]
 pub struct Project {
     pub id: String,
+    pub status: String, 
+    pub payoutAddress: String,
+    pub project: String, 
     pub createdAt: String,
     pub updatedAt: String,
     pub chainId: Option<String>,
@@ -36,9 +39,15 @@ pub struct ProjectsQuery {
 
 // ROUNDS
 #[derive(Clone, Insertable, Queryable, Serialize, Deserialize, Debug)]
-#[diesel(table_name = round)]
+#[diesel(table_name = rounds)]
 pub struct Round {
     pub id: String,
+    pub payoutStrategy: String, 
+    pub token: String, 
+    pub roundStartTime: String, 
+    pub roundEndTime: String, 
+    pub applicationsStartTime: String,
+    pub applicationsEndTime: String, 
     pub createdAt: String,
     pub updatedAt: String,
     pub chainId: Option<String>,
@@ -51,7 +60,7 @@ pub struct RoundsQuery {
 
 // VOTES
 #[derive(Clone, Insertable, Queryable, Serialize, Deserialize, Debug)]
-#[diesel(table_name = vote)]
+#[diesel(table_name = votes)]
 pub struct Vote {
     pub id: String,
     pub createdAt: String,

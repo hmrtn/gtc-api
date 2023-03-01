@@ -1,4 +1,4 @@
-DROP TABLE program;
-DROP TABLE round;
-DROP TABLE project;
-DROP TABLE vote;
+DROP TABLE programs;
+DROP TABLE rounds;
+DROP TABLE projects;
+DROP TABLE votes;
